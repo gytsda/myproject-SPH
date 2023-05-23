@@ -1,0 +1,34 @@
+第一种错误
+vue-router.esm.js?3423:2314 
+       TypeError: Cannot read properties of undefined (reading '$createElement')
+    at render (index.vue?5b7d:3:1)
+    at eval (vue-router.esm.js?3423:2144:1)
+    at eval (vue-router.esm.js?3423:2171:1)
+    at Array.map (<anonymous>)
+    at eval (vue-router.esm.js?3423:2171:1)
+    at Array.map (<anonymous>)
+    at flatMapComponents (vue-router.esm.js?3423:2170:1)
+    at eval (vue-router.esm.js?3423:2106:1)
+    at iterator (vue-router.esm.js?3423:2357:1)
+    at step (vue-router.esm.js?3423:2004:1)
+    这种错误是由于在路由配置中component多了个s引起的
+    
+    
+    第二种错误
+    Do not use built-in or reserved HTML elements as component id: footer
+    这种是由于在name中和class类名冲突了
+    
+    第三中错误
+    vue.runtime.esm.js?c320:619 
+            
+           [Vue warn]: Property or method "userName" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See:
+           属性或方法未定义
+           第四种错误
+           Refused to apply style from 'http://localhost:8081/iconfont.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+           css文件中有@import
+    
+    
+    vue%E4%B8%AD%E8%AE%A…9E%E6%80%A7.html:39 
+            
+           Uncaught SyntaxError: missing ) after argument list
+           这个错误是多了一个'{'

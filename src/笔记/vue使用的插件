@@ -1,0 +1,7 @@
+1 图片懒加载
+vue-lazyload插件
+会注册一个v-lazy的自定义指令
+
+2 elment-ui插件
+
+3表单验证插件vee-validate

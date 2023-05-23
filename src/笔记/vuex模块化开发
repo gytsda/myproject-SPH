@@ -1,0 +1,17 @@
+在store里面的index.js中分多个小仓库用modules配置引进来
+import home from './home'
+import search from './search'
+/*对外暴露Store类的一个实例*/
+export default new Vuex.Store({
+    modules:{
+        home,
+        search
+    }
+})
+
+watch 监听 data 中的数值，需要先在watch：{ } 中绑定要监听的值，监听的数值只要变化，就执行 watch
+1. 默认情况下，变量被初始化的时候，watch 不会立即执行，如果想要立即执行，使用 watch 的immediate 属性。
+2. 如果watch监听的是一个对象，则对象中的属性值变化，watch无法监听到。如果想要监听，使用 watch 的 deep 属性。
+
+updated 监听 template中绑定的值，要监听的数值只要变化，就执行 updated
+1. 不用额外添加监听方法，只要在 template 中绑定，update 自动监听

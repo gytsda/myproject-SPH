@@ -1,0 +1,46 @@
+
+   第一个疑问
+    /*通过API里面的接口函数调用向服务器发请求获取数据*/
+   async categoryList({commit}) {
+        // 发请求
+        let result = await reqCategoryList();
+      if(result.code==200){
+          commit("CATEGORYLIST",result.data);
+      }
+      这里为什么可以直接commit 参数commit带个大括号是什么意思
+
+
+      第二个疑问
+      const mutation = {
+          CATEGORYLIST(state,categoryList){
+              state.categoryList=categoryList;
+
+          }
+      };
+
+      const actions = {
+          /*通过API里面的接口函数调用向服务器发请求获取数据*/
+         async categoryList({commit}) {
+              // 发请求
+              let result = await reqCategoryList();
+            if(result.code==200){
+                commit("CATEGORYLIST",result.data);
+            }
+
+          }
+      };
+     mutation必须写道actions前面吗？
+
+     第三个疑问在TypeNav中年
+     let {categoryname, category1id, category2id, category3id} = elment.dataset;
+     你怎么确定他获取到的dataset数据是根据这样名字来的
+
+在Home组件中为什么:key不用index
+<!--    楼层    -->
+        <Floor v-for="(floor,index) in floorList" :key=""></Floor>
+
+        这里为什么要.code 这个code是服务器的返回还是数据返回的
+        为什么不直接写result就行了   为空不就是没有获取到数据吗
+          if(result.code==200){
+
+                }

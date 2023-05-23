@@ -1,0 +1,3 @@
+静态函数Promise.reject返回一个被拒绝的Promise对象。通过使用Error的实例获取错误原因reason对调试和选择性错误捕捉很有帮助。
+Promise.reject(new Error('fail')).then(resolved, rejected);
+// expected output: Error: fail

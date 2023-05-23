@@ -1,0 +1,6 @@
+2.1:工作的时候src目录下的API文件夹，一般关于axios二次封装的文件
+2.2进度条：nprogress模块实现进度条功能
+工作的时候，修改进度条的颜色，修改源码样式.bar类名
+done进度条完成
+start进度条开始
+修改进度条的样式：直接在node_modules/nprogress/nprogress.css下修改#nprogress .bar 的颜色

@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!--    引入默认清除样式-->
+    <link rel="stylesheet" href="<%= BASE_URL %>reset.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_3417648_35j5cj5mu3.css">
+
     <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <style>
+        @font-face {
+            font-family: "iconfont"; /* Project id 3417648 */
+            src: url('//at.alicdn.com/t/font_3417648_0hoc0l0odfpv.woff2?t=1653125945118') format('woff2'),
+            url('//at.alicdn.com/t/font_3417648_0hoc0l0odfpv.woff?t=1653125945118') format('woff'),
+            url('//at.alicdn.com/t/font_3417648_0hoc0l0odfpv.ttf?t=1653125945118') format('truetype');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-todown:before {
+            content: "\e64f";
+        }
+
+        .icon-arrowup:before {
+            content: "\e7ee";
+        }
+
+    </style>
+</head>
+<body>
+<!--如果浏览器不支持js的话就显示这个-->
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
 </html>

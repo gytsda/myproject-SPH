@@ -1,0 +1,78 @@
+###router在main.js的注册作用
+$route :一般获取路由信息【路径、query、params等等】
+$router:一般进行编程式导航进行路由跳转【push、replace】
+###路由跳转传参数
+第一种字符串
+这种方式属于占位占位(params方式)
+path:"/search/:id
+this.$router.push("/search/"+this.id)
+
+这种方式属于占位占位(query方式 => ?key:value方式)
+this.$router.push("/search/?id="+this.id)
+
+获取参数
+第一种parmas参数
+$route.parmas.id
+
+第二种query参数
+$route.query.id
+
+第二种传参:模板字符串
+this.$router.push(``/search+${this.id}`)
+
+第三中传参：对像
+这种方式需要给每个路由起一个名字(name)
+this.$router.push({name:""search",params:{id:this.id},query:{id:this.id}})
+
+路由传参相关问题
+路由传递参数先关面试题
+     1:路由传递参数（对象写法）path是否可以结合params参数一起使用?
+     不可以：不能这样书写，程序会崩掉出现错误
+     this.$router.push({path:""/search"},params:{id:this.id}，query:{id:this.id})
+     2:如何指定params参数可传可不传? 
+     this.$router.push({name:""search"},query:{id:this.id})
+     在路由.js文件中已经占位了(params参数) 如果不传递params参数的话路径会出现问题
+     那如何指定params参数可传可不传
+    path:""/search/search:id?"  像这样在路径后面加一个问号
+     3:params参数可以传递也可以不传递，但是如果传递是空串，如何解决？
+          this.$router.push({path:""/search"},params:{id:"""}，query:{id:this.id})
+ 在路由.js文件中已经占位了(params参数) 如果传递params参数的话式空字串路径会出现问题
+ 使用undefined解决
+          this.$router.push({path:""/search"},params:{id:"""||undefined}，query:{id:this.id})
+
+    如果指定name与params配置, 但params中数据是一个"", 无法跳转，路径会出问题
+     
+     5: 路由组件能不能传递props数据?
+第一种方式式布尔值写法 可以params参数作为路由身上的属性，只有params参数才可以
+     this.$router.push({path:""/search"},params:{id:this.id}，query:{id:this.id})
+
+在路由.js中配置
+props:true
+用props接收属性
+props:["id"]
+
+第二种方式传递一个对象在路由.js中配置
+props:[a:1,b:2]
+
+第三中方式:函数写法 可以params参数、query参数 通过props传递给路由组件
+props:($route)=>{
+return {id:$route.params.id}
+}
+编程式路由跳转到当前路由(参数不变),多次执行会抛出警告错误
+声明式没有这种问题,因为vue-router已经处理好了
+为什么编程式导航进行跳转会出现警告错误
+最新的vue-router引入了Promise
+1通过给push方法传递相应的成功和失败的回调函数,可以捕获到当前错误，可以解决。不过就是治标不治本
+this.$router.push({},(resolve)=>{},(error)=>{}
+
+跨域
+什么是跨域:协议、域名、端口号不同请求，称之为跨域
+
+解决方案
+JSONP、CROS、代理(在vue.config.js配置)
+
+4如果注册的是一个全局组件 就把那个组件放在components文件下
+
+
+
+
